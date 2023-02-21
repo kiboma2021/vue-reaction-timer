@@ -1,6 +1,6 @@
 <template>
     <div class="backdrop">
-        <div class="modal">
+        <div class="modal" v-if="showBlock">
             <h1>Click to close ...</h1>
 
         </div>
@@ -11,7 +11,18 @@
 <script>
 export default {
     props: ['delay'],
-    methods: {}
+    data() {
+        return {
+            showBlock: false,
+        }
+    },
+    mounted() {
+        console.log("Beggining to mount...", this.delay)
+        setTimeout(() =>{this.showBlock=true}, this.delay)
+    },
+    updated() {
+        console.log("Updated......")
+    }
 
 }
 </script>

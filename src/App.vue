@@ -2,11 +2,11 @@
 
 <div>
   <h1>{{ heading }}</h1>
-  <button @click="toggleModal">Play</button>
+  <button @click="startPlaying">Play</button>
 </div>
 
-  <div v-if="showModal">
-    <Block class="modal" @close="toggleModal" >
+  <div v-if="isPlaying">
+    <Block class="modal" @close="startPlaying" >
       
     </Block>
   </div>
@@ -23,13 +23,17 @@ export default {
   data() {
     return {
       heading: "Welcome to Reaction Timer Game ...",
-      showModal: false
+      isPlaying: false,
+      delay:null
     }
   },
 
   methods: {
-    toggleModal() {
-      this.showModal = !this.showModal
+    startPlaying() {
+      this.delay= 2000 + Math.random()*5000
+      this.isPlaying = !this.isPlaying
+
+      console.log(this.delay)
     }
 
   }

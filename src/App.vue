@@ -6,7 +6,7 @@
 </div>
 
   <div v-if="showModal">
-    <Block class="modal">
+    <Block class="modal" @close="toggleModal" >
       
     </Block>
   </div>

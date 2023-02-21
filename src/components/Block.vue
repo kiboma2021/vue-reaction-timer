@@ -1,6 +1,6 @@
 <template>
     <div class="backdrop">
-        <div class="modal" @click="closeModal">
+        <div class="modal">
             <h1>Click to close ...</h1>
 
         </div>
@@ -10,11 +10,8 @@
 
 <script>
 export default {
-    methods: {
-        closeModal(){
-            this.$emit('close')
-        }
-    }
+    props: ['delay'],
+    methods: {}
 
 }
 </script>
@@ -35,7 +32,7 @@ export default {
     background: rgba(0, 0, 0, 0.486);
     width: 100%;
     height: 100%;
-    margin-top: -2rem;
+  
 
 
 }

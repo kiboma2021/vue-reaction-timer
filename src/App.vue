@@ -2,11 +2,11 @@
 
 <div>
   <h1>{{ heading }}</h1>
-  <button @click="startPlaying">Play</button>
+  <button @click="startPlaying" :disabled="isPlaying">Play</button>
 </div>
 
   <div v-if="isPlaying">
-    <Block class="modal" @close="startPlaying" >
+    <Block class="modal" :delay="delay">
       
     </Block>
   </div>
@@ -31,9 +31,8 @@ export default {
   methods: {
     startPlaying() {
       this.delay= 2000 + Math.random()*5000
-      this.isPlaying = !this.isPlaying
+      this.isPlaying = true
 
-      console.log(this.delay)
     }
 
   }

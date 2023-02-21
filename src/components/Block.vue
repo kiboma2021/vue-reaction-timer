@@ -1,7 +1,7 @@
 <template>
-    <div class="backdrop" @click.self="closeModal">
-        <div class="modal">
-            <h1>Modal heading</h1>
+    <div class="backdrop">
+        <div class="modal" @click="closeModal">
+            <h1>Click to close ...</h1>
 
         </div>
     </div>
@@ -25,8 +25,8 @@ export default {
     background: greenyellow;
     margin:100px auto;
     padding: 20px;
-    border-radius: 10px;    
-
+    border-radius: 10px;
+    color: white;
 }
 
 .backdrop{

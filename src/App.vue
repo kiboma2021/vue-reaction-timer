@@ -5,22 +5,25 @@
   <button @click="startPlaying" :disabled="isPlaying" :class="{deactbtn: isPlaying}" >Play</button>
 </div>
 
-<h1 v-if="score">Result is {{ this.score }} ms</h1>
-
   <div v-if="isPlaying">
     <Block class="modal" :delay="delay" @end="endGame">
       
     </Block>
   </div>
 
+  <div v-if="score">
+    <Result /> 
+  </div> 
+
 </template>
 
 <script>
 import Block from './components/Block.vue'
+import Result from './components/Result.vue'
 
 export default {
   name: 'App',
-  components: {Block},
+  components: {Block, Result},
 
   data() {
     return {

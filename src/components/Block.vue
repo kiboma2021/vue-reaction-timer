@@ -16,7 +16,6 @@ export default {
         }
     },
     mounted() {
-        console.log("Beggining to mount...", this.delay)
         setTimeout(() =>{
             this.showBlock=true
             this.startTimer()

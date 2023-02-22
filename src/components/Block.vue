@@ -1,11 +1,8 @@
 <template>
-    <div class="backdrop">
-        <div class="modal" v-if="showBlock">
-            <h1>Click to close ...</h1>
+    <div class="modal" v-if="showBlock">
+        <h1>Click to close ...</h1>
 
-        </div>
     </div>
-  
 </template>
 
 <script>
@@ -35,17 +32,6 @@ export default {
     padding: 20px;
     border-radius: 10px;
     color: white;
-}
-
-.backdrop{
-    top: 0;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.486);
-    width: 100%;
-    height: 100%;
-  
-
-
 }
 
 </style>

@@ -2,7 +2,7 @@
 
 <div>
   <h1>{{ heading }}</h1>
-  <button @click="startPlaying" :disabled="isPlaying">Play</button>
+  <button @click="startPlaying" :disabled="isPlaying" :class="{deactbtn: isPlaying}" >Play</button>
 </div>
 
   <div v-if="isPlaying">
@@ -60,6 +60,10 @@ button {
   border-radius: 10px;
   width: 8rem;
   padding: 1rem;
+}
+
+.deactbtn {
+  background-color: grey;
 }
 
 </style>

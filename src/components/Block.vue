@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" v-if="showBlock">
+    <div class="modal" v-if="showBlock" @click="stopTimer">
         <h1>Click to close ...</h1>
 
     </div>
@@ -7,19 +7,33 @@
 
 <script>
 export default {
-    props: ['delay'],
+    props: ['delay','isPlaying'],
     data() {
         return {
             showBlock: false,
+            timer: null,
+            reactionTime: 0,
         }
     },
     mounted() {
         console.log("Beggining to mount...", this.delay)
-        setTimeout(() =>{this.showBlock=true}, this.delay)
+        setTimeout(() =>{
+            this.showBlock=true
+            this.startTimer()
+        }, this.delay)
     },
-    updated() {
-        console.log("Updated......")
+    methods: {
+        startTimer(){
+            this.timer = setInterval(() =>{
+                this.reactionTime += 10
+            },10)
+        },
+        stopTimer() {
+            clearInterval(this.timer)
+            this.$emit("end",this.reactionTime)
+        }
     }
+
 
 }
 </script>

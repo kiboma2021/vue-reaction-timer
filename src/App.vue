@@ -12,7 +12,9 @@
   </div>
 
   <div v-if="score">
-    <Result /> 
+    <Result :score="score">
+
+    </Result> 
   </div> 
 
 </template>

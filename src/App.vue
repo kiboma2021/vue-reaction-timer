@@ -5,7 +5,7 @@
   <button @click="startPlaying" :disabled="isPlaying" :class="{deactbtn: isPlaying}" >Play</button>
 </div>
 
-<h1 v-if="score">Result is {{ this.score }}</h1>
+<h1 v-if="score">Result is {{ this.score }} ms</h1>
 
   <div v-if="isPlaying">
     <Block class="modal" :delay="delay" @end="endGame">
@@ -35,6 +35,7 @@ export default {
     startPlaying() {
       this.delay= 2000 + Math.random()*5000
       this.isPlaying = true
+      this.score = null
     },
     endGame(myReactionTime){
       this.score= myReactionTime
